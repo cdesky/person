@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var sysName=null,selectSys=[],all={}
+			
+			$(function(){
+				
+				$('.SysName').on('change',function(){
+					 var _this=$(this),
+					 	flag=false,
+					 	sys=_this.find('option:selected').text()
+					 
+					if(sysName==null)
+					{
+						sysName={
+							'name':$(this).find('option:selected').text(),
+							'id':$(this).val(),
+							'role':['224-f03s','424-4024']
+						}
+						selectSys.push(sysName)
+					}
+					else
+						{
+							if(all[sys]!=undefined)
+								$.each(all[sys], function(i,val) { 
+									if(val.name==_this.find('option:selected').text())
+									{
+										flag=true
+			 							//sysName.name=_this.find('option:selected').text()
+			 							//sysName.id=_this.val()
+									}
+								})
+						}
+					
+					all[sys]=selectSys
+					
+					console.log(all)
+					
+					if(flag)
+					{
+						all[sys][0].name='测试1'
+						all[sys][0].id='测试id'
+						all[sys][0].role=['aabbcc','ddeeff']
+					}
+ 			 
+					console.log(all)
+					
+				})
+				
+				
+				var str='',sys='ctms'
+				$('.checkBox input').on('click',function(){
+					if($(this).prop('checked'))
+					{
+						str+=$(this).next().text()
+					}
+				})
+				
+				$('.del').on('click',function(){
+					delete all[sys]
+					console.log(all)
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<select class="SysName">
+			<option value="">请选择</option>
+			<option value="4dsf23-18023">ctms</option>
+			<option value="52343s-52325">edc</option>
+			<option value="242343-cd34s2">iwrs</option>
+		</select>
+		<div class="checkBox">
+		<input type="checkbox" name="ckbox" value="42346-756ds3"/><label for="">测试1</label>
+		<input type="checkbox" name="ckbox" value="71027-471a93"/><label for="">测试2</label>
+		<input type="checkbox" name="ckbox" value="xs311-dd3432"/><label for="">测试3</label>
+		</div>
+		<span class="del">X</span>
+	</body>
+</html>
