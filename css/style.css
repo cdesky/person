@@ -593,6 +593,7 @@ h5.sub {
     margin-left: 3em;
     margin-right: -7.3em;
     z-index: 9;
+    visibility: hidden;
 }
 .work-right.work-right2 {
     min-height: 210px;
