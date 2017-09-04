@@ -88,10 +88,10 @@ body a {
 }
 .name p {
     text-align: center;
-    font-size: 14px;
     margin: 10px 0 15px;
     letter-spacing: 11px;
     color: #ccc;
+    font: bold 1.1em/1em '微软雅黑';
 }
 .container.banner-drop.nav-open{
   margin-top: 8em;
