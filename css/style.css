@@ -587,6 +587,7 @@ h5.sub {
 .work-right h5 span.glyphicon {
     margin-right: 3.5em;
     margin-left: -8em;
+    visibility: hidden;
 }
 .work-left2 h5 span.glyphicon {
     margin-left: 3em;
